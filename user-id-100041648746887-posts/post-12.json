@@ -1,0 +1,29 @@
+{
+    "_id": "100041648746887",
+    "profile_name": "Rahul Sharma",
+    "serial_no": 12,
+    "post_actor": "Rahul Sharma",
+    "post_actor_unique_id": "unique id of the post actor",
+    "post_title": "Let us create a post on anti terror and promote peace on earth. Be the WIND OF CHANGE that the world expects you to be.  Neither ammunition nor gun powder but a grenade of love and prosperity.  #greenday",
+    "post_details": {
+        "p_total_no_of_comments": "1 comment",
+        "p_total_no_of_shares": "no shares",
+        "p_total_no_of_emotions": "no emotions",
+        "p_total_no_of_likes": "no likes",
+        "p_total_no_of_hahas": "no hahas",
+        "p_total_no_of_angries": "no angries",
+        "p_total_no_of_sads": "no sads",
+        "p_total_no_of_wowes": "no wowes",
+        "if_comments": true
+    },
+    "comments": {
+        "comment 1": {
+            "c_serial_no": 1,
+            "c_title": "Testing the post",
+            "c_actor_name": "Rahul Sharma",
+            "c_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMzUyNjcxODc4NzE1NzJfMTM1MjY3MjU3ODcxNTY1",
+            "c_total_no_of_emotions": "no comment emotions",
+            "if_replies": false
+        }
+    }
+}

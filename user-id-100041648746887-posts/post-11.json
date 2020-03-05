@@ -1,0 +1,55 @@
+{
+    "_id": "100041648746887",
+    "profile_name": "Rahul Sharma",
+    "serial_no": 11,
+    "post_actor": "Rahul Sharma",
+    "post_actor_unique_id": "unique id of the post actor",
+    "post_title": "The best institute one can study in...",
+    "post_details": {
+        "p_total_no_of_comments": "no comments",
+        "p_total_no_of_shares": "no shares",
+        "p_total_no_of_emotions": "no emotions",
+        "p_total_no_of_likes": "no likes",
+        "p_total_no_of_hahas": "no hahas",
+        "p_total_no_of_angries": "no angries",
+        "p_total_no_of_sads": "no sads",
+        "p_total_no_of_wowes": "no wowes",
+        "if_comments": false
+    },
+    "comments": {
+        "comment 1": {
+            "c_serial_no": 1,
+            "c_title": "Comment_1",
+            "c_actor_name": "Rahul Sharma",
+            "c_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMzYxNjY5MjExMTQ5MzJfMTM5MjgxMDM0MTM2ODU0",
+            "c_total_no_of_emotions": "no comment emotions",
+            "if_replies": true,
+            "replies": {
+                "reply 1": {
+                    "r_serial_no": 1,
+                    "r_title": "Reply_1",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMzYxNjY5MjExMTQ5MzJfMTM5MjgxMTE3NDcwMTc5",
+                    "r_total_no_of_emotions": "no reply emotions"
+                }
+            }
+        },
+        "comment 2": {
+            "c_serial_no": 2,
+            "c_title": "Comment_2",
+            "c_actor_name": "Rahul Sharma",
+            "c_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMzYxNjY5MjExMTQ5MzJfMTM5MjgxMDk0MTM2ODQ4",
+            "c_total_no_of_emotions": "no comment emotions",
+            "if_replies": true,
+            "replies": {
+                "reply 1": {
+                    "r_serial_no": 1,
+                    "r_title": "Reply_2",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMzYxNjY5MjExMTQ5MzJfMTM5MjgxMjU3NDcwMTY1",
+                    "r_total_no_of_emotions": "no reply emotions"
+                }
+            }
+        }
+    }
+}

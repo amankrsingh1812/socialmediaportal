@@ -1,0 +1,124 @@
+{
+    "_id": "100041648746887",
+    "profile_name": "Rahul Sharma",
+    "serial_no": 13,
+    "post_actor": "Rahul Sharma",
+    "post_actor_unique_id": "unique id of the post actor",
+    "post_title": "Soldiers of solitude will fight for truth and justice!!!",
+    "post_details": {
+        "p_total_no_of_comments": "19 comments",
+        "p_total_no_of_shares": "",
+        "p_total_no_of_emotions": "1",
+        "p_total_no_of_likes": "no likes",
+        "p_total_no_of_hahas": "no hahas",
+        "p_total_no_of_angries": "no angries",
+        "p_total_no_of_sads": "no sads",
+        "p_total_no_of_wowes": "no wowes",
+        "if_comments": true
+    },
+    "comments": {
+        "comment 1": {
+            "c_serial_no": 1,
+            "c_title": "say something!!",
+            "c_actor_name": "Rahul Sharma",
+            "c_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTI0MzY3NjMyMjk0ODYx",
+            "c_total_no_of_emotions": "1",
+            "if_replies": true,
+            "replies": {
+                "reply 1": {
+                    "r_serial_no": 1,
+                    "r_title": "i m telling!!\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTI0NDA5MTk1NjI0MDM4",
+                    "r_total_no_of_emotions": "no reply emotions"
+                },
+                "reply 2": {
+                    "r_serial_no": 2,
+                    "r_title": "ABCD",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTMzMDQ0OTgxNDI3MTI2",
+                    "r_total_no_of_emotions": "no reply emotions"
+                }
+            }
+        },
+        "comment 2": {
+            "c_serial_no": 2,
+            "c_title": "Why are you not getting? Its simple \ud83d\ude02",
+            "c_actor_name": "Abhradeep Datta",
+            "c_actor_id": "/abhradeep.datta?comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTI2MDAzNjg4Nzk3OTIy",
+            "c_total_no_of_emotions": "1",
+            "if_replies": true,
+            "replies": {
+                "reply 1": {
+                    "r_serial_no": 1,
+                    "r_title": "hahaha",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTI4MjYyNjA1MjM4Njk3",
+                    "r_total_no_of_emotions": "no reply emotions"
+                },
+                "reply 2": {
+                    "r_serial_no": 2,
+                    "r_title": "Abhradeep Datta dont complex things bruhhhh",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTM1MjI1NjUxMjA5MDU5",
+                    "r_total_no_of_emotions": "no reply emotions"
+                }
+            }
+        },
+        "comment 3": {
+            "c_serial_no": 3,
+            "c_title": "good morning",
+            "c_actor_name": "Rahul Sharma",
+            "c_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTM1MjIzNzkxMjA5MjQ1",
+            "c_total_no_of_emotions": "no comment emotions",
+            "if_replies": true,
+            "replies": {
+                "reply 1": {
+                    "r_serial_no": 1,
+                    "r_title": "testing morning......",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTM1MjI0MjYxMjA5MTk4",
+                    "r_total_no_of_emotions": "no reply emotions"
+                },
+                "reply 2": {
+                    "r_serial_no": 2,
+                    "r_title": "cloudy morning....",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTM1MjI0MzI3ODc1ODU4",
+                    "r_total_no_of_emotions": "no reply emotions"
+                }
+            }
+        },
+        "comment 4": {
+            "c_serial_no": 4,
+            "c_title": "hail to the king...",
+            "c_actor_name": "Rahul Sharma",
+            "c_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTM1MjI0MTY0NTQyNTQx",
+            "c_total_no_of_emotions": "no comment emotions",
+            "if_replies": true,
+            "replies": {
+                "reply 1": {
+                    "r_serial_no": 1,
+                    "r_title": "uhgc",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTM3MjkxODc3NjY5MTAz",
+                    "r_total_no_of_emotions": "no reply emotions"
+                },
+                "reply 2": {
+                    "r_serial_no": 2,
+                    "r_title": "rrdxz",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTM3MjkxODg0MzM1NzY5",
+                    "r_total_no_of_emotions": "no reply emotions"
+                },
+                "reply 3": {
+                    "r_serial_no": 3,
+                    "r_title": "qefbn",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxMjQzNDkxMjIyOTY3MTJfMTM3MjkxODk0MzM1NzY4",
+                    "r_total_no_of_emotions": "no reply emotions"
+                }
+            }
+        }
+    }
+}

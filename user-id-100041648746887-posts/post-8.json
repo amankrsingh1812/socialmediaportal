@@ -1,0 +1,69 @@
+{
+    "_id": "100041648746887",
+    "profile_name": "Rahul Sharma",
+    "serial_no": 8,
+    "post_actor": "Rahul Sharma",
+    "post_actor_unique_id": "unique id of the post actor",
+    "post_title": "no title",
+    "post_details": {
+        "p_total_no_of_comments": "no comments",
+        "p_total_no_of_shares": "no shares",
+        "p_total_no_of_emotions": "no emotions",
+        "p_total_no_of_likes": "no likes",
+        "p_total_no_of_hahas": "no hahas",
+        "p_total_no_of_angries": "no angries",
+        "p_total_no_of_sads": "no sads",
+        "p_total_no_of_wowes": "no wowes",
+        "if_comments": false
+    },
+    "comments": {
+        "comment 1": {
+            "c_serial_no": 1,
+            "c_title": "this is a comment 1",
+            "c_actor_name": "Rahul Sharma",
+            "c_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxNDg5NzI5Mjk4MzQzMzFfMTQ4OTcyOTU5ODM0MzI4",
+            "c_total_no_of_emotions": "no comment emotions",
+            "if_replies": true,
+            "replies": {
+                "reply 1": {
+                    "r_serial_no": 1,
+                    "r_title": "this is reply 1 of comment 1",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxNDg5NzI5Mjk4MzQzMzFfMTQ4OTczMDE5ODM0MzIy",
+                    "r_total_no_of_emotions": "no reply emotions"
+                },
+                "reply 2": {
+                    "r_serial_no": 2,
+                    "r_title": "this is reply 2 of comment 1",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxNDg5NzI5Mjk4MzQzMzFfMTQ4OTczMDc2NTAwOTgz",
+                    "r_total_no_of_emotions": "no reply emotions"
+                }
+            }
+        },
+        "comment 2": {
+            "c_serial_no": 2,
+            "c_title": "this is comment 3",
+            "c_actor_name": "Rahul Sharma",
+            "c_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxNDg5NzI5Mjk4MzQzMzFfMTQ4OTczMTU5ODM0MzA4",
+            "c_total_no_of_emotions": "no comment emotions",
+            "if_replies": true,
+            "replies": {
+                "reply 1": {
+                    "r_serial_no": 1,
+                    "r_title": "this is reply 1 of comment 3",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxNDg5NzI5Mjk4MzQzMzFfMTQ4OTczMjAzMTY3NjM3",
+                    "r_total_no_of_emotions": "no reply emotions"
+                },
+                "reply 2": {
+                    "r_serial_no": 2,
+                    "r_title": "this is reply 2 of comment 3",
+                    "r_actor_name": "Rahul Sharma",
+                    "r_actor_id": "/profile.php?id=100041648746887&comment_id=Y29tbWVudDoxNDg5NzI5Mjk4MzQzMzFfMTQ4OTczMjQ2NTAwOTY2",
+                    "r_total_no_of_emotions": "no reply emotions"
+                }
+            }
+        }
+    }
+}

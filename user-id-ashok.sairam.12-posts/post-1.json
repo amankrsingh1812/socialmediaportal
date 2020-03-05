@@ -1,0 +1,19 @@
+{
+    "_id": "ashok.sairam.12",
+    "profile_name": "Ashok Sairam",
+    "serial_no": 1,
+    "post_actor": "Ashok Sairam",
+    "post_actor_unique_id": "unique id of the post actor",
+    "post_title": "no title",
+    "post_details": {
+        "p_total_no_of_comments": "no comments",
+        "p_total_no_of_shares": "",
+        "p_total_no_of_emotions": "1",
+        "p_total_no_of_likes": "no likes",
+        "p_total_no_of_hahas": "no hahas",
+        "p_total_no_of_angries": "no angries",
+        "p_total_no_of_sads": "no sads",
+        "p_total_no_of_wowes": "no wowes",
+        "if_comments": false
+    }
+}

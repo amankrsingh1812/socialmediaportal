@@ -1,0 +1,29 @@
+{
+    "_id": "ashok.sairam.12",
+    "profile_name": "Ashok Sairam",
+    "serial_no": 14,
+    "post_actor": "Ashok Sairam",
+    "post_actor_unique_id": "unique id of the post actor",
+    "post_title": "no title",
+    "post_details": {
+        "p_total_no_of_comments": "no comments",
+        "p_total_no_of_shares": "no shares",
+        "p_total_no_of_emotions": "no emotions",
+        "p_total_no_of_likes": "no likes",
+        "p_total_no_of_hahas": "no hahas",
+        "p_total_no_of_angries": "no angries",
+        "p_total_no_of_sads": "no sads",
+        "p_total_no_of_wowes": "no wowes",
+        "if_comments": false
+    },
+    "comments": {
+        "comment 1": {
+            "c_serial_no": 1,
+            "c_title": "Thanks Maushumi Barooah, a very happy new year to you too and your family ...",
+            "c_actor_name": "Ashok Sairam",
+            "c_actor_id": "/ashok.sairam.12?comment_id=Y29tbWVudDo0MjEyNzQ1MTEzMDI4MTBfNzI4OTc1Njk3MTk5MzU1",
+            "c_total_no_of_emotions": "1",
+            "if_replies": false
+        }
+    }
+}

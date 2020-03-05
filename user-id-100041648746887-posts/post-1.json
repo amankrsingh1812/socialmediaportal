@@ -1,0 +1,38 @@
+{
+    "_id": "100041648746887",
+    "profile_name": "Rahul Sharma",
+    "serial_no": 1,
+    "post_actor": "Deb Ris",
+    "post_actor_unique_id": "unique id of the post actor",
+    "post_title": "You are too good to handle !!!",
+    "post_details": {
+        "p_total_no_of_comments": "2 comments",
+        "p_total_no_of_shares": "no shares",
+        "p_total_no_of_emotions": "no emotions",
+        "p_total_no_of_likes": "no likes",
+        "p_total_no_of_hahas": "no hahas",
+        "p_total_no_of_angries": "no angries",
+        "p_total_no_of_sads": "no sads",
+        "p_total_no_of_wowes": "no wowes",
+        "if_comments": true
+    },
+    "comments": {
+        "comment 1": {
+            "c_serial_no": 1,
+            "c_title": "hi",
+            "c_actor_name": "Deb Ris",
+            "c_actor_id": "/deb.ris.14?comment_id=Y29tbWVudDoyMjA2NTA1MzU5OTk5MDNfMjIwNjUxMTY5MzMzMTcz",
+            "c_total_no_of_emotions": "no comment emotions",
+            "if_replies": true,
+            "replies": {
+                "reply 1": {
+                    "r_serial_no": 1,
+                    "r_title": "hello",
+                    "r_actor_name": "Deb Ris",
+                    "r_actor_id": "/deb.ris.14?comment_id=Y29tbWVudDoyMjA2NTA1MzU5OTk5MDNfMjIwNjUxMTkyNjY2NTA0",
+                    "r_total_no_of_emotions": "no reply emotions"
+                }
+            }
+        }
+    }
+}
