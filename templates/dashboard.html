@@ -108,7 +108,14 @@
                 document.getElementById('dashboardform').reset();
                 document.getElementById('data').innerText=data;
                 console.log(data);
-            },
+                {#var win=window.open('output');#}
+                {#with(win.document)#}
+                {#    {#}
+                {#        open();#}
+                {#        write(data);#}
+                {#        close();#}
+                {#    }#}
+                },
             error: function (data) {
                 console.log('An error occurred.');
                 console.log(data);

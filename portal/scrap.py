@@ -1,4 +1,21 @@
 def run(facebook_id):
+    import os
+    import urllib.parse
+    import shutil
+    import json
+    import string
+    import numpy as np
+    import gensim
+    import gensim.corpora as corpora
+    from gensim.utils import simple_preprocess
+    from gensim.models import CoherenceModel
+    from gensim.models.ldamodel import LdaModel
+    import re
+    from nltk.corpus import wordnet
+    import nltk
+    from nltk.stem import WordNetLemmatizer
+    from nltk.tokenize import word_tokenize
+    from nltk.corpus import stopwords
     from selenium import webdriver
     from selenium.webdriver.common.keys import Keys
     from selenium.webdriver.chrome.options import Options
@@ -17,40 +34,42 @@ def run(facebook_id):
     import os
     from afinn import Afinn
     from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-
-    #***********************************************************************#
-    #username and password to maintain a fb session
-    username ='8723047187'
-    password ='rs1234'
-    #***********************************************************************#
-    #paths
+    all_posts_list = []
+    profile_actor_posts_list = []
+    # ***********************************************************************#
+    # username and password to maintain a fb session
+    username = '8723047187'
+    password = 'rs1234'
+    # ***********************************************************************#
+    # paths
     driver_path = "/usr/bin/chromedriver"
-    #id will be taken as input from website
+    # id will be taken as input from website
     # facebook_id = "https://www.facebook.com/profile.php?id=100041648746887&__tn__=%2Cd-]-h-R&eid=ARBl5E-jNndxZu4Pob1DHEdPY4lyyJmBV1V6wDyb7JyGPcNNaVpsXLjGD__XajvKlGxD61FsaxIUysG9"
-    #path of the json dir
+    # path of the json dir
     json_dir = "./"
-    #***********************************************************************#
-    #for getting the unique id, primary key
-    #making the json dir if the dir is not created before
+    # ***********************************************************************#
+    # for getting the unique id, primary key
+    # making the json dir if the dir is not created before
     friend_unique_id = ""
     s = facebook_id[25:].split('?')
-    if(s[0] == "profile.php"):
-        friend_unique_id =  urllib.parse.parse_qs(s[1])['id'][0]
+    if (s[0] == "profile.php"):
+        friend_unique_id = urllib.parse.parse_qs(s[1])['id'][0]
     else:
         friend_unique_id = s[0]
     post_dir = json_dir + "user-id-" + friend_unique_id + "-posts"
-    #***********************************************************************#
-    #for making the json directory
-    if(not os.path.isdir(post_dir)):
+    # ***********************************************************************#
+    # for making the json directory
+    if (not os.path.isdir(post_dir)):
         os.mkdir(post_dir)
-    #***********************************************************************#
-    #login into facebook
+    # ***********************************************************************#
+    # login into facebook
     try:
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--disable-notifications")
-        driver = webdriver.Chrome(executable_path=driver_path,chrome_options=chrome_options)
+        driver = webdriver.Chrome(executable_path=driver_path, chrome_options=chrome_options)
     except:
-        print("Please ensure to give correct driver path and check the compatibility of the driver with the version of the Chrome.")
+        print(
+            "Please ensure to give correct driver path and check the compatibility of the driver with the version of the Chrome.")
     driver.get("https://www.facebook.com")
     driver.find_element_by_name("email").send_keys(username)
     driver.find_element_by_name("pass").send_keys(password)
@@ -58,11 +77,10 @@ def run(facebook_id):
         driver.find_element_by_css_selector('button[name="login"]').click()
     except Exception as e:
         driver.find_element_by_xpath("//*[@id='loginbutton']").click()
-    #***********************************************************************#
+    # ***********************************************************************#
 
     # scraping posts and saving each posts as a json files
     post_details = ''
-
 
     def scrap_post(friend_id):
         driver.get(friend_id)
@@ -203,7 +221,8 @@ def run(facebook_id):
 
             comments_details = element.find_all('div', attrs={'class': '_680y'})
 
-            print("Post Details:" + " " + str(post_count) + " " + actor, title, date_time, emotions, likes, loves, wowes,
+            print("Post Details:" + " " + str(post_count) + " " + actor, title, date_time, emotions, likes, loves,
+                  wowes,
                   hahas, sads, angries, shares, no_of_comments)
             # json
             post['serial_no'] = post_count
@@ -262,7 +281,8 @@ def run(facebook_id):
                     c_emotions = 'no comment emotions'
 
                 print("Comment is : ", c_comment)
-                print("Comment details: ", "c_ actor:", c_actor, ", c_ actor_id:", c_actor_id, ", c_emotions: ", c_emotions)
+                print("Comment details: ", "c_ actor:", c_actor, ", c_ actor_id:", c_actor_id, ", c_emotions: ",
+                      c_emotions)
 
                 # updating json
                 comment_count = 'comment ' + str(c_count)
@@ -322,14 +342,14 @@ def run(facebook_id):
 
             with open(json_path, 'w') as jsonwriteFile:
                 json.dump(post, jsonwriteFile, indent=4)
-
+        driver.close()
         print("\n***************************post-end*******************************\n")
+
     # *************************************************#
     # affins and vader score
     # traversing the root directory and reading json files of each posts
     def sentiment_scores():
-        all_posts_list = []
-        profile_actor_posts_list = []
+
         for file in os.listdir(post_dir):
             full_filename = "%s/%s" % (post_dir, file)
             with open(full_filename, 'r') as fi:
@@ -352,44 +372,153 @@ def run(facebook_id):
                                 if (reply_details['r_actor_name'] == json_dict['profile_name']):
                                     profile_actor_posts_list.append(reply_details['r_title'])
 
-        s=""
-        s=s+("\n******************sentiment-scores-in-complete-eco-system*******************\n")
-        # print(all_posts_list)
+        s = ""
+        s = s + ("\n******************sentiment-scores-in-complete-eco-system*******************\n")
+        print(all_posts_list)
         # analysis of posts overall
         message_str = " ".join(str(x) for x in all_posts_list)
         afinn = Afinn(language='en')
         analyzer = SentimentIntensityAnalyzer()
-        s=s+("overall affin score is "+ str(afinn.score(message_str)) + "\n")
-        s=s+("overall vader score is "+ str(analyzer.polarity_scores(message_str)) + "\n")
+        s = s + ("overall analysis_1 score is " + str(afinn.score(message_str)) + "\n")
+        s = s + ("overall analysis_2 score is " + str(analyzer.polarity_scores(message_str)) + "\n")
         for post in all_posts_list:
             if (not post == "no title"):
-                s=s+("post is :"+ post+ "\n")
+                s = s + ("post is :" + post + "\n")
                 # AFINN's score
-                s=s+("affin score is --  "+ str(afinn.score(post)))
+                s = s + ("Analysis_1 score is --  " + str(afinn.score(post)))
                 # vader
-                s=s+("vader score is --  "+ str(analyzer.polarity_scores(post))+ "\n")
-        s=s+("\n****************sentiment-scores-in-complete-eco-system-end*******************\n")
+                s = s + ("\n Analysis_2 score is --  " + str(analyzer.polarity_scores(post)) + "\n")
+        s = s + ("\n****************sentiment-scores-in-complete-eco-system-end*******************\n")
 
-        s=s+("\n*********************sentiment-scores-of-profile-actor***********************\n")
+        s = s + ("\n*********************sentiment-scores-of-profile-actor***********************\n")
         # print(profile_actor_posts_list)
         p_actor_message_str = " ".join(str(x) for x in profile_actor_posts_list)
         afinn = Afinn(language='en')
         analyzer = SentimentIntensityAnalyzer()
-        s=s+("overall affin score is "+ str(afinn.score(p_actor_message_str)) + "\n")
-        s=s+("overall vader score is "+ str(analyzer.polarity_scores(p_actor_message_str)) + "\n")
+        s = s + ("overall analysis_1 score is " + str(afinn.score(p_actor_message_str)) + "\n")
+        s = s + ("overall analysis_2 score is " + str(analyzer.polarity_scores(p_actor_message_str)) + "\n")
         for post in profile_actor_posts_list:
             if (not post == "no title"):
-                s=s+("post is :"+ post+ "\n")
+                s = s + ("post is :" + post + "\n")
                 # AFINN's score
-                s=s+("affin score is --  "+ str(afinn.score(post)))
+                s = s + ("Analysis_1 score is --  " + str(afinn.score(post)))
                 # vader
-                s=s+("vader score is --  "+ str(analyzer.polarity_scores(post))+ "\n")
-        s=s+("\n*******************sentiment-scores-of-profile-actor-end***********************\n")
+                s = s + ("\nAnalysis_2 score is --  " + str(analyzer.polarity_scores(post)) + "\n")
+        s = s + ("\n*******************sentiment-scores-of-profile-actor-end***********************\n")
         return s
-    # *************************************************#
 
-    #*************************************************#
-    #method calls
+    # *************************************************#
+    stop_words = stopwords.words('english')
+    stop_words.extend(
+        ['from', 'subject', 're', 'edu', 'use', 'no title', 'title', 'reply_', 'comment_', 'dont', 'reply', 'testing',
+         'never', 'opps', 'felt', 'way', 'one'])
+
+    # helping methods to extract keywords:
+    def get_wordnet_pos(word):
+        tag = nltk.pos_tag([word])[0][1][0].upper()
+        tag_dict = {"J": wordnet.ADJ, "N": wordnet.NOUN, "V": wordnet.VERB, "R": wordnet.ADV}
+        return tag_dict.get(tag, wordnet.NOUN)
+
+    def remove_stop_words(texts):
+        data_words_nostop = []
+        for doc in texts:
+            for word in simple_preprocess(str(doc)):
+                if word not in stop_words:
+                    data_words_nostop.append(word)
+        return data_words_nostop
+
+    # method to extract keywords:
+    data = []
+
+    def extract_keywords(List_of_titles):
+        data = []
+        for element in List_of_titles:
+            element = str(element).lower()
+            data.append(element)
+
+        # Remove new line characters
+        data = [re.sub('\s+', ' ', sent) for sent in data]
+        # Remove distracting single quotes
+        data = [re.sub("\'", "", sent) for sent in data]
+        # print(List_of_titles)
+        # tokenize and lemmatize:
+        lemmatized_list = []
+        lemmatizer = WordNetLemmatizer()
+        for sentence in data:
+            element = nltk.word_tokenize(sentence)
+            for word in element:
+                word = lemmatizer.lemmatize(word, pos='n')
+                word = gensim.utils.simple_preprocess(word, deacc=True)
+                lemmatized_list.append(word)
+
+                # Build the bigram and trigram models:
+        bigram = gensim.models.Phrases(lemmatized_list, min_count=5, threshold=100)  # higher threshold fewer phrases.
+        trigram = gensim.models.Phrases(bigram[lemmatized_list], threshold=100)
+
+        bigram_mod = gensim.models.phrases.Phraser(bigram)
+        trigram_mod = gensim.models.phrases.Phraser(trigram)
+
+        # functions for stopwords, bigrams, trigrams and lemmatization:
+        data_words_nostop = []
+        data_words_lemmatized = []
+        data_words_bigrams = []
+
+        # call the functions in order:
+        data_words_nostop = remove_stop_words(lemmatized_list)
+
+        # Create Dictionary:
+        id2word_dic = corpora.Dictionary([data_words_nostop])
+
+        # Create Corpus:
+        texts = [data_words_nostop]
+
+        # Term Document Frequency
+        corpus = [id2word_dic.doc2bow(text) for text in texts]
+
+        # Human readable format of corpus (term-frequency)
+        # print([[(id2word_dic[id], freq) for id, freq in cp] for cp in corpus[:1]])
+
+        # Build LDA model:
+        lda_model = gensim.models.ldamodel.LdaModel(corpus=corpus, id2word=id2word_dic, num_topics=1, random_state=100,
+                                                    update_every=1, chunksize=100, passes=10, alpha='auto',
+                                                    per_word_topics=True)
+
+        doc_lda = lda_model[corpus]
+
+        # Compute Perplexity:
+        # print('\nPerplexity: ', lda_model.log_perplexity(corpus))  # a measure of how good the model is. lower the better.
+
+        # Compute Coherence Score
+        coherence_model_lda = CoherenceModel(model=lda_model, texts=texts, dictionary=id2word_dic, coherence='c_v')
+        coherence_lda = coherence_model_lda.get_coherence()
+        # print('\nCoherence Score: ', coherence_lda)
+
+        # keywords:
+        list_of_keywords = []
+        st="############# Final list of keywords ################ \n"
+        for index, topic in lda_model.show_topics(formatted=False, num_words=30):
+            # """
+            # print('Topic: {} \nWords: {}'.format(index, [w[0] for w in topic]))
+            # print(topic)
+            # """
+
+            for element in [w[0] for w in topic]:
+                list_of_keywords.append(element)
+
+        print(list_of_keywords)
+        st = st+", ".join(list_of_keywords)
+        return st
+
+    # *************************************************#
+    # method calls
     scrap_post(facebook_id)
-    return sentiment_scores()
-#*************************************************#
+    ans = sentiment_scores()
+    print(all_posts_list)
+    st = extract_keywords(all_posts_list)
+    ans = ans + "\n"
+    ans = ans + st
+    return ans
+
+
+run("https://www.facebook.com/profile.php?id=100041648746887&__tn__=%2Cd-]-h-R&eid=ARBl5E-jNndxZu4Pob1DHEdPY4lyyJmBV1V6wDyb7JyGPcNNaVpsXLjGD__XajvKlGxD61FsaxIUysG9")
+# *************************************************#

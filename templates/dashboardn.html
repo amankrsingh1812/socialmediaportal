@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <div>
+<div class="sidenav">
+    <a href="#"><u>Profile List</u></a>
+    <div class="vertical-menu">
+        {% for ep in emp %}
+            {% if ep == pname %}
+                <a href="{{ ep }}" class="active">{{ ep }}</a>
+            {% else %}
+                <a href="{{ ep }}">{{ ep }}</a>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+    </div>
+    <section id="contents">
+    <div class="dashboardinp">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <form name="myform" method="post" action="/output/"
+  target="_blank">
+{% csrf_token %}
+    <input type="hidden" value="{{ cemp.fb_link }}" name="fb_id">
+</form>
+<div class="card">
+  <img src="{% static 'images/img.jpg' %}" alt="John" style="width:100%">
+  <h1>{{pname}}</h1>
+  <p data-toggle="tooltip" title="Email" class="title"><i class="fa fa-envelope" style="font-size:18px;"></i>&nbsp;&nbsp;{{ cemp.email }}</p>
+        <p data-toggle="tooltip" title="Phone Number"><i  class="fa fa-phone" style="font-size:18px;"></i>&nbsp;&nbsp;{{ cemp.contact_no }}</p>
+  <p data-toggle="tooltip" title="Address"><i class="far fa-address-card" style="font-size:18px;"></i>&nbsp;&nbsp;{{cemp.address}}</p>
+    <p data-toggle="tooltip" title="Age,Gender"><i class="fas fa-user" style="font-size:18px;"></i>&nbsp;&nbsp;{{ cemp.age }}, {{ cemp.gender }}</p>
+    <p data-toggle="tooltip" title="Date Of Birth"><i class="far fa-calendar-alt" style="font-size:18px;"></i>&nbsp;&nbsp;{{ cemp.dob }}</p>
+  <p> <button class="button buttonBlue" onclick="document.forms['myform'].submit(); return false;">Analyse
+              <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+  </button></p>
+</div>
+
+        <div id="data"></div>
+{#    </form>#}
+    </div>
+    </section>
+{% endblock %}

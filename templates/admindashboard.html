@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <div>
+<div class="sidenav">
+    <a href="#"><u>Options</u></a>
+    <div class="vertical-menu">
+  <a href="/dashboard1">All Profiles</a>
+  <a href="#">Edit Profiles</a>
+  <a href="#" class="active">Add New Profiles</a>
+
+    </div>
+</div>
+    </div>
+    <section id="contents">
+    <div>
+         <div class="dashboardinp">
+<form method="post">
+                 {% csrf_token %}
+<div class="form-group row">
+  <label for="name" class="col-2 col-form-label">Name</label>
+  <div class="col-10">
+    <input class="form-control" type="text" placeholder="Enter the name" id="name" name="emp_name">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="email" class="col-2 col-form-label">Email</label>
+  <div class="col-10">
+    <input class="form-control" type="email" placeholder="Enter the email" id="email" name="email">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="address" class="col-2 col-form-label">Address</label>
+  <div class="col-10">
+    <textarea class="form-control" id="address" rows="3" placeholder="Enter Address" name="address"></textarea>
+  </div>
+</div>
+<div class="form-group row">
+<label class="col-2 col-form-label" for="inlineFormCustomSelect">Gender</label>
+  <div class="col-10">
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="gender">
+    <option selected>Choose...</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+{#    <option value="3">Three</option>#}
+
+  </select>
+  </div>
+</div>
+<div class="form-group row">
+  <label for="contact-number" class="col-2 col-form-label">Contact Number</label>
+  <div class="col-10">
+    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="contact-number" name="contact_no">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="skills" class="col-2 col-form-label">Skills</label>
+  <div class="col-10">
+    <input class="form-control" type="text" placeholder="Please Enter Skills (Comma Seperated)" id="skills" name="skills">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="age" class="col-2 col-form-label">Age</label>
+  <div class="col-10">
+    <input class="form-control" type="number" value="42" id="age" name="age">
+  </div>
+</div>
+{#<div class="form-group row">#}
+{#  <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>#}
+{#  <div class="col-10">#}
+{#    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">#}
+{#  </div>#}
+{#</div>#}
+<div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label">Date Of Birth</label>
+  <div class="col-10">
+    <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="dob">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="fb_link" class="col-2 col-form-label">FB Link</label>
+  <div class="col-10">
+    <input class="form-control" type="text" placeholder="Please Enter FB link" id="fb_link" name="fb_link">
+  </div>
+</div>
+    <div class="form-group row">
+  <label for="twitter_link" class="col-2 col-form-label">Twitter Link</label>
+  <div class="col-10">
+    <input class="form-control" type="text" disabled="true" placeholder="Please Enter Twitter link" id="twitter_link">
+  </div>
+</div>
+    <div class="form-group row">
+  <label for="linkedin_link" class="col-2 col-form-label">LinkedIn Link</label>
+  <div class="col-10">
+    <input class="form-control" type="text" disabled="true" placeholder="Please Enter LinkedIn link" id="linkedin_link">
+  </div>
+</div>
+    <div class="form-group row">
+        <label for="profile_pic"class="col-2 col-form-label">Profile Pic</label>
+  <div class="col-10">
+    <input type="file" class="custom-file-input" name="inputfileFacebook"  aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="profile_pic" >Choose file</label>
+  </div>
+</div>
+  <button type  ="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>
+    </div>
+    </section>
+{% endblock %}

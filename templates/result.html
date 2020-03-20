@@ -1,0 +1,423 @@
+{% load static  %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+    body {
+	background: #e2eaef;
+	font-family: "Open Sans", sans-serif;
+        text-align: center;
+}
+h2 {
+	color: #000;
+	font-size: 26px;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	margin: 30px 0 60px;
+}
+h2::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 4px;
+	border-radius: 1px;
+	background: #7ac400;
+	left: 0;
+	right: 0;
+	bottom: -20px;
+}
+.carousel {
+	margin: 50px auto;
+	padding: 0 70px;
+}
+.carousel .item {
+	color: #747d89;
+	min-height: 25px;
+    text-align: center;
+	overflow: hidden;
+}
+.carousel .thumb-wrapper {
+	padding: 25px 15px;
+	background: #fff;
+	border-radius: 6px;
+	text-align: center;
+	position: relative;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+
+.carousel .item h4 {
+	font-size: 18px;
+}
+.carousel .item h4, .carousel .item p, .carousel .item ul {
+	margin-bottom: 5px;
+}
+.carousel .thumb-content .btn {
+	color: #7ac400;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: none;
+    border: 1px solid #7ac400;
+    padding: 6px 14px;
+    margin-top: 5px;
+    line-height: 16px;
+    border-radius: 20px;
+}
+.carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
+	color: #fff;
+	background: #7ac400;
+	box-shadow: none;
+}
+.carousel .thumb-content .btn i {
+	font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.carousel .carousel-control {
+	height: 44px;
+	width: 40px;
+	background: #7ac400;
+    margin: auto 0;
+    border-radius: 4px;
+	opacity: 0.8;
+}
+.carousel .carousel-control:hover {
+	background: #78bf00;
+	opacity: 1;
+}
+.carousel .carousel-control i {
+    font-size: 36px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -19px 0 0 0;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    color: #fff;
+	text-shadow: none;
+    font-weight: bold;
+}
+.carousel .item-price {
+	font-size: 13px;
+	padding: 2px 0;
+}
+.carousel .item-price strike {
+	opacity: 0.7;
+	margin-right: 5px;
+}
+.carousel .carousel-control.left i {
+	margin-left: -2px;
+}
+.carousel .carousel-control.right i {
+	margin-right: -4px;
+}
+.carousel .carousel-indicators {
+	bottom: -50px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	margin: 4px;
+	border-radius: 50%;
+	border: none;
+}
+.carousel-indicators li {
+	background: rgba(0, 0, 0, 0.2);
+}
+.carousel-indicators li.active {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+#classification-section-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    grid-column-gap: 1em;
+    margin: 30px 30px 30px 10%;
+    width: 75%;
+
+}
+
+.classification-item {
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-column-gap: 1em;
+    margin: 15px;
+    width: 150px;
+}
+
+.classification-item .icon-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.classification-item .text-section {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--dark-grey);
+}
+
+.classification-item .level-section {
+    padding-top: 15px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.classification-item .icon {
+    text-align: center;
+    padding:0% 25% 0% 25%;
+    width: 3em;
+    color: var(--dark-grey);
+}
+    .xyz {
+            background-size: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .btn-circle.btn-sm {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            font-size: 8px;
+            text-align: center;
+        }
+        .btn-circle.btn-md {
+            width: 50px;
+            height: 50px;
+            padding: 7px 10px;
+            border-radius: 25px;
+            font-size: 10px;
+            text-align: center;
+        }
+        .btn-circle.btn-xl {
+            width: 100px;
+            height: 100px;
+            padding: 10px 16px;
+            border-radius: 55px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+</style>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <h1>Result Of Analysis &nbsp;&nbsp;&nbsp;
+<span data-toggle="tooltip" data-placement="bottom" title="Affin (Analysis 1):
+
+This analysis takes into account each word and computes the score based on the dictionary of words with polarity scores ranging from -5 to +5. The negative score indicates negative sentiments while positive scores indicate positive sentiments.
+
+Vader (Analysis 2):
+
+This analysis provides a detailed sentiment analysis which is sensitive to positive as well as negative sentiments. It also calculates the intensity or strength of the emotions. It uses a human-centric approach, combining qualitative analysis and empirical validation by using human raters and the wisdom of the crowd. It combines a dictionary, which maps lexical features to emotion intensity, and four simple heuristics, which encode how contextual elements increment, decrement, or negate the sentiment of text. It also takes into account the sentiments related to different emoji used in social media platforms." class="glyphicon glyphicon-question-sign"></span>
+</h1>
+</nav>
+{#     <h3 style="text-align: right">About</h3>#}
+</div>
+<h2><b>Traits Score</b></h2>
+<div class="row">
+{% for x,y in g.items  %}
+  <div class="col-sm-3"style="margin-top: 60px; text-align: right ">
+    <div class="card" >
+      <div class="card-body">
+        <h3 class="card-title">{{x }}</h3>
+{#        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>#}
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3"style="margin-top: 10px;">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Analysis 1 Score</h4>
+{#        <p class="card-text">#}
+        <div class="card bg-primary" style="min-height: 100px; padding-top: 25px;font-size: 18px;">
+                <div class="card-body text-center">
+                    <p class="card-text">Profile Actor: {{ y.1.affin_score }}
+                        <br>
+                        Overall: {{ y.2.affin_score }}</p>
+      </div></div>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-sm-4" style="margin-top: 10px;">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Analysis 2 Score</h4>
+{#        <p class="card-text">#}
+            <div class="card bg-danger" style="min-height: 100px; padding-top: 25px;font-size: 18px;">
+    <div class="card-body text-center">
+      <p class="card-text">Profile Actor: neg = {{ y.1.vader_score.neg }} pos = {{ y.1.vader_score.pos }} compound = {{ y.1.vader_score.compound }}
+      <br>
+      Overall : neg = {{ y.2.vader_score.neg }} pos = {{ y.2.vader_score.pos }} compound = {{ y.2.vader_score.compound }}</p>
+    </div>
+  </div>
+{#        </p>#}
+      </div>
+    </div>
+    </div>
+
+{% endfor %}
+
+</div>
+<section id="classification">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Key Words frequency for <b>Profile Actor</b></h2>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+                {% for key,val in kfpa.items %}
+                    {% if forloop.counter0|divisibleby:4 %}
+                        <div class="item carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                        <div class="row">
+                    {% endif %}
+
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								 <div class="classification-item low ">
+                                    <div class="icon-column">
+                                        <i class="fa fa-file-text" style="font-size:36px;"></i>
+                                        <div class="text-section">
+                                            {{key}}
+{#                                            {{ forloop.counter0 }}#}
+                                        </div>
+                                    </div>
+                                    <div class="level-section">
+                                        {{val}}
+                                        Posts
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                   {% if forloop.counter|divisibleby:4 %}
+                       </div>
+                       </div>
+                    {% endif %}
+                {% endfor %}
+
+			</div>
+            </div>
+        </div>
+
+{#            </div>#}
+			<!-- Carousel controls -->
+			<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+
+</section>
+<section id="classification">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Key Words frequency for <b>ALL</b></h2>
+			<div id="myCarousel1" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+                {% for key,val in kfo.items %}
+                    {% if forloop.counter0|divisibleby:4 %}
+                        <div class="item carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                        <div class="row">
+                    {% endif %}
+
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								 <div class="classification-item low ">
+                                    <div class="icon-column">
+                                        <i class="fa fa-file-text" style="font-size:36px;"></i>
+                                        <div class="text-section">
+                                            {{key}}
+{#                                            {{ forloop.counter0 }}#}
+                                        </div>
+                                    </div>
+                                    <div class="level-section">
+                                        {{val}}
+                                        Posts
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                   {% if forloop.counter|divisibleby:4 %}
+                       </div>
+                       </div>
+                    {% endif %}
+                {% endfor %}
+
+			</div>
+            </div>
+        </div>
+
+{#            </div>#}
+			<!-- Carousel controls -->
+			<a class="carousel-control left carousel-control-prev" href="#myCarousel1" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control right carousel-control-next" href="#myCarousel1" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+
+</section>
+
+<p>
+  <a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">
+      <h2>Post Wise Sentiment Score For Profile Actor (Click To Expand)</h2>
+  </a>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+      <pre>{{ s1 }}</pre>
+  </div>
+</div><p>
+  <a  data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="true" aria-controls="collapseExample1">
+      <h2>Post Wise Sentiment Score For ALL (Click To Expand)</h2>
+  </a>
+</p>
+<div class="collapse" id="collapseExample1">
+  <div class="card card-body">
+      <pre>{{ s2 }}</pre>
+  </div>
+</div>
+</body>
